@@ -1,0 +1,16 @@
+<% @page_title = "New Image" %>
+<div class="images new">
+<h2>New Image</h2>
+<form action="<%= @post_image.url %>" method="post" enctype="multipart/form-data">
+	<% @post_image.fields.each do |name, value| %>
+		<input type="hidden" name="<%= name %>" value="<%= value %>"/>
+	<% end %>
+	<table summary="New Image">
+		<tr>
+			<th>Image:</th>
+			<td><input type="file" name="file" /></td>
+		</tr>
+	<table>
+	<%= submit_tag("Upload Image") %>
+</form>
+</div>

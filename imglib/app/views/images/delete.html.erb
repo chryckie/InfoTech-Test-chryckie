@@ -1,0 +1,10 @@
+<% @page_title = "Delete Image" %>
+<div class="images delete">
+	<h2>Delete Image</h2>
+	<p>Are you sure you want to delete this image from the library?</p>
+	<p> 
+	<%= link_to('Delete', {:action => 'destroy', :id => @image.id}, :class => 'action destroy') %>
+	<%= link_to('Cancel', {:action => 'show', :id => @image.id}, :class => 'action show') %>
+	</p>
+	<%= render(:partial => "show_image") %>
+</div>

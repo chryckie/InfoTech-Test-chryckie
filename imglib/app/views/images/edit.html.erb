@@ -1,0 +1,31 @@
+<% @page_title = "Edit Image" %>
+<div class="images edit">
+	<h2>Edit Image Details</h2>	
+		
+	<%= form_for(:image, :url => {:action => 'update', :id => @image.id}) do |f| %>
+	<%= f.hidden_field(:key, value: @image.key) %>
+	<table summary="Image form fields">
+		<tr>
+			<td colspan=2>
+				<%= image_tag(@imurl, :width=>200, :height=>200, :border=>0) %>
+			</td>
+		</tr>
+		<tr>
+			<th>Caption</th>
+			<td><%= f.text_field(:caption) %></td>
+		</tr>
+		<tr>
+			<th>Description</th>
+			<td><%= f.text_field(:description) %></td>
+		</tr>
+		<tr>
+			<th>Alternate Text</th>
+			<td><%= f.text_field(:alt_text) %></td>
+		</tr>
+	</table>
+	<br />
+	<div class="form-buttons">
+		<%= submit_tag("Update Image Details") %>
+	</div>
+	<% end #form_for %>
+</div>

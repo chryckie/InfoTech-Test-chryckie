@@ -1,0 +1,9 @@
+<% @page_title = "Show Image" %>
+<div class="images show">
+	<h2>Show Image</h2>
+	<p>
+	<%= link_to('Edit Details', {:action => 'edit', :id => @image.id}, :class => 'action edit') %>
+	<%= link_to('Delete', {:action => 'delete', :id => @image.id}, :class => 'action delete') %>
+	</p>
+	<%= render(:partial => "show_image") %>
+</div>
